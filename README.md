@@ -34,8 +34,16 @@ A powerful text summarization tool that provides both extractive and abstractive
 
 ### Screenshots
 
+ ![WhatsApp Image 2025-03-17 at 09 46 11_8f75df6a](https://github.com/user-attachments/assets/0efffff1-7c62-4f8b-96e0-7e24f4195914)
 
-![WhatsApp Image 2025-03-17 at 09 47 30_914e7f7f](https://github.com/user-attachments/assets/2ba4e15a-cfe3-4097-930c-6a26faf1c88f)
+
+ 
+![WhatsApp Image 2025-03-17 at 09 47 05_593062da](https://github.com/user-attachments/assets/4a4485bc-03ef-48e1-9262-4c9e009d8416)
+
+
+
+![WhatsApp Image 2025-03-17 at 09 47 30_914e7f7f](https://github.com/user-attachments/assets/0013e5dc-4e61-45d2-b884-aa3e221e8121)
+
 
 
 
