@@ -1,0 +1,140 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card shadow-sm">
+            <div class="card-header bg-white">
+                <h2 class="card-title mb-0">
+                    <i class="fas fa-robot text-primary me-2"></i>Text Summarization
+                </h2>
+            </div>
+            <div class="card-body">
+                <form id="summarize-form">
+                    <div class="mb-3">
+                        <label for="text-input" class="form-label">Enter your text:</label>
+                        <textarea class="form-control" id="text-input" rows="10" placeholder="Paste your article, document, or any text you want to summarize..."></textarea>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Summarization Method:</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="method" id="method-both" value="both" checked>
+                                <label class="form-check-label" for="method-both">
+                                    Both Methods
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="method" id="method-extractive" value="extractive">
+                                <label class="form-check-label" for="method-extractive">
+                                    Extractive Only
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="method" id="method-abstractive" value="abstractive">
+                                <label class="form-check-label" for="method-abstractive">
+                                    Abstractive Only
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <label for="ratio-slider" class="form-label">Summary Length (% of original):</label>
+                            <input type="range" class="form-range" min="10" max="50" step="5" value="30" id="ratio-slider">
+                            <div class="text-center" id="ratio-value">30%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary" id="summarize-btn">
+                            <i class="fas fa-magic me-2"></i>Summarize
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="card shadow-sm mt-4 d-none" id="results-card">
+            <div class="card-header bg-white">
+                <h3 class="card-title mb-0">
+                    <i class="fas fa-file-alt text-success me-2"></i>Summary Results
+                </h3>
+            </div>
+            <div class="card-body">
+                <ul class="nav nav-tabs" id="summaryTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="extractive-tab" data-bs-toggle="tab" data-bs-target="#extractive" type="button" role="tab" aria-controls="extractive" aria-selected="true">
+                            Extractive Summary
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="abstractive-tab" data-bs-toggle="tab" data-bs-target="#abstractive" type="button" role="tab" aria-controls="abstractive" aria-selected="false">
+                            Abstractive Summary
+                        </button>
+                    </li>
+                </ul>
+                <div class="tab-content p-3" id="summaryTabContent">
+                    <div class="tab-pane fade show active" id="extractive" role="tabpanel" aria-labelledby="extractive-tab">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h5>Key sentences extracted from the original text:</h5>
+                            <button class="btn btn-sm btn-outline-primary copy-btn" data-target="extractive-content">
+                                <i class="fas fa-copy"></i> Copy
+                            </button>
+                        </div>
+                        <div class="p-3 border rounded bg-light" id="extractive-content">
+                            <div class="placeholder-glow">
+                                <span class="placeholder col-12"></span>
+                                <span class="placeholder col-12"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="abstractive" role="tabpanel" aria-labelledby="abstractive-tab">
+                        <div class="d-flex justify-content-between mb-2">
+                            <h5>AI-generated summary:</h5>
+                            <button class="btn btn-sm btn-outline-primary copy-btn" data-target="abstractive-content">
+                                <i class="fas fa-copy"></i> Copy
+                            </button>
+                        </div>
+                        <div class="p-3 border rounded bg-light" id="abstractive-content">
+                            <div class="placeholder-glow">
+                                <span class="placeholder col-12"></span>
+                                <span class="placeholder col-12"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-3">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">Original Length</h5>
+                                    <p class="card-text" id="original-length">0 words</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">Extractive Length</h5>
+                                    <p class="card-text" id="extractive-length">0 words</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">Abstractive Length</h5>
+                                    <p class="card-text" id="abstractive-length">0 words</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
