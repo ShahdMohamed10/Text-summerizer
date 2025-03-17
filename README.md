@@ -30,15 +30,14 @@ A powerful text summarization tool that provides both extractive and abstractive
 - **REST API**: Programmatic access for integration with other applications
 - **Fast Processing**: Efficient algorithms for quick summarization
 
-## 🎬 Demo
+##  Demo
 
 ### Screenshots
 
-*Screenshots of the application will be added here after deployment.*
 
-### Video Demo
+![WhatsApp Image 2025-03-17 at 09 47 30_914e7f7f](https://github.com/user-attachments/assets/2ba4e15a-cfe3-4097-930c-6a26faf1c88f)
 
-*A video demonstration of the application will be added here after deployment.*
+
 
 ## 📁 Project Structure
 
@@ -211,15 +210,7 @@ The abstractive summarizer works by:
 - User accounts and saved summaries
 - Batch processing capabilities
 
-## 👥 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 ## 📄 License
 
